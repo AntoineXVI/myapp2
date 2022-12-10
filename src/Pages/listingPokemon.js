@@ -21,7 +21,7 @@ function ListingPokemon(props){
             return <div key={key} className="bloc-pokemon">
                 <img className="avatar" src={pokemon.img} />
                 <h2>{pokemon.name}</h2>
-                <button onClick={()=>AddToPokedex(pokemon._id)}>Capturer !</button>
+                <button onClick={()=>AddToPokedex(pokemon,pokemon._id)}>Capturer !</button>
             </div>
             })
         }

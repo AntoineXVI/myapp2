@@ -1,13 +1,15 @@
 import axios from "axios";
 
-export function AddToPokedex (pokemon,_id) {
-    // Send a POST request
-    axios({
-        method: 'post',
-        url: 'http://localhost:4444/pokedex/insert',
-        data: {
-        "name":pokemon,
-        "id":pokemon.id
-        }
-    });
+export const AddToPokedex =  async (pokemon) => {
+    const url = 'http://localhost:4444/pokedex/insert';
+    axios.post(url, null, { params: {
+        name: pokemon.name,
+        id: pokemon.id,
+    }})
+    .then(response => console.log(response.status))
+    .catch(err => console.warn(err));
+    console.log('Got body_insert:', pokemon);
 }
+
+
+export default AddToPokedex;
