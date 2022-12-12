@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { GetAll } from "../Api/pokedex";
+import { ModifyToPokemon } from "../Api/managePokemon";
+import { GetAll } from "../Api/pokemon";
 
 function ManagePokemon(props){
     const [ pokemons, setPokemons ] = useState([]);
@@ -18,8 +19,12 @@ function ManagePokemon(props){
             pokemons.map((pokemon,key) =>{
             return <><h1>ManagePokemon</h1>;<div key={key} className="bloc-pokemon">
                 <img className="avatar" src={pokemon.img} />
-                <h2>{pokemon.name}</h2>
-                {/*<button onClick={()=>ModifyToPokedex(pokemon._id)}>Modifier !</button>*/}
+                <h2>name :</h2>
+                <h3>{pokemon.name}</h3>
+                <h2>type :</h2>
+                <h3>{pokemon.type1}</h3>
+                <h3>{pokemon.type2}</h3>
+                <button onClick={()=>ModifyToPokemon(pokemon._id)}>Modifier !</button>
             </div>
             </>
             })
